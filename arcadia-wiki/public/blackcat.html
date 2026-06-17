@@ -5,25 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阿卡迪亞零式 - 1樓攻略</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 賽博朋克戰鬥風格背景圖片設定 */
+        .boss-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('images/bg-boss1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-white min-h-screen p-4 md:p-8">
+<body class="boss-bg text-white min-h-screen p-4 md:p-8">
 
-    <!-- 背景音樂 -->
-    <audio id="bgm" src="ItsShowtime.mp3" loop></audio>
+    <!-- 背景音樂（已修正路徑，請確保檔案放在 public/music/ItsShowtime.mp3） -->
+    <audio id="bgm" src="music/ItsShowtime.mp3" loop></audio>
 
     <div class="max-w-5xl mx-auto">
         <!-- 頂部導航與音樂控制 -->
-        <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+        <div class="flex justify-between items-center mb-6 border-b border-slate-700/50 pb-4">
             <a href="index.html" class="text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-1 transition">
                 <span>←</span> 回首頁
             </a>
-            <button onclick="toggleMusic()" id="musicBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg transition">
+            <button onclick="toggleMusic()" id="musicBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg transition-all duration-300">
                 🎵 播放戰鬥 BGM
             </button>
         </div>
 
-        <!-- 主攻略卡片 -->
-        <main class="bg-slate-800/90 rounded-2xl border border-slate-700 shadow-2xl p-6 md:p-8 space-y-10">
+        <!-- 主攻略卡片（加入稍微黑化的背景與霧面濾鏡，提升背景圖襯托下的文字可讀性） -->
+        <main class="bg-slate-950/80 backdrop-blur-sm rounded-2xl border border-slate-800 shadow-2xl p-6 md:p-8 space-y-10">
             <!-- 標題 -->
             <div class="border-l-4 border-rose-500 pl-4">
                 <h1 class="text-3xl md:text-4xl font-black tracking-wide text-rose-400">【阿卡迪亞零式】輕量級一層 黑貓</h1>
@@ -31,7 +40,7 @@
             </div>
 
             <!-- 1. 四連尖甲 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 四連尖甲
                 </h2>
@@ -40,20 +49,20 @@
                 </p>
                 <!-- 圖片群組 (3張並排) -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat1.png" alt="blackcat1" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat2.png" alt="blackcat2" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat3.png" alt="blackcat3" class="w-full h-auto rounded object-cover">
                     </div>
                 </div>
             </section>
 
             <!-- 2. 貓踏踏 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-rose-400 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-rose-400"></span> 貓踏踏
                 </h2>
@@ -63,7 +72,7 @@
             </section>
 
             <!-- 3. 貓生九命 + 二連尖甲 + 靈魂之影 + 雙重or四重利爪 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 貓生九命 + 二連尖甲 + 靈魂之影 + 雙重or四重利爪
                 </h2>
@@ -72,17 +81,17 @@
                 </p>
                 <!-- 圖片群組 (2張並排) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat4.png" alt="blackcat4" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat5.png" alt="blackcat5" class="w-full h-auto rounded object-cover">
                     </div>
                 </div>
             </section>
 
             <!-- 4. 靈魂之影 + 貓跳四連尖甲 + 雙重or四重利爪 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 靈魂之影 + 貓跳四連尖甲 + 雙重or四重利爪
                 </h2>
@@ -91,17 +100,17 @@
                 </p>
                 <!-- 圖片群組 (2張並排) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat6.png" alt="blackcat6" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat7.png" alt="blackcat7" class="w-full h-auto rounded object-cover">
                     </div>
                 </div>
             </section>
 
             <!-- 5. 血腥抓撓 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-rose-400 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-rose-400"></span> 血腥抓撓
                 </h2>
@@ -111,7 +120,7 @@
             </section>
 
             <!-- 6. 捕鼠 + 模仿之貓 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 捕鼠 + 模仿之貓
                 </h2>
@@ -121,17 +130,17 @@
                 </p>
                 <!-- 圖片群組 (2張並排) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat8.png" alt="blackcat8" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat9.png" alt="blackcat9" class="w-full h-auto rounded object-cover">
                     </div>
                 </div>
             </section>
 
             <!-- 7. 衝擊波 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 衝擊波
                 </h2>
@@ -140,17 +149,17 @@
                 </p>
                 <!-- 圖片群組 (2張並排) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat10.png" alt="blackcat10" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat11.png" alt="blackcat11" class="w-full h-auto rounded object-cover">
                     </div>
                 </div>
             </section>
 
             <!-- 8. 貓跳二連尖甲→靈魂之影 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 貓跳二連尖甲→靈魂之影
                 </h2>
@@ -160,7 +169,7 @@
             </section>
 
             <!-- 9. 貓跳四連尖甲→靈魂之影 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 貓跳四連尖甲→靈魂之影
                 </h2>
@@ -170,7 +179,7 @@
             </section>
 
             <!-- 10. 暴風裂 + 二連尖甲(分身) -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 暴風裂 + 二連尖甲(分身)
                 </h2>
@@ -180,7 +189,7 @@
             </section>
 
             <!-- 11. 剪指甲 + 四連尖甲(分身) -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 剪指甲 + 四連尖甲(分身)
                 </h2>
@@ -189,29 +198,29 @@
                 </p>
                 <!-- 圖片群組 (2張並排) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat12.png" alt="blackcat12" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat13.png" alt="blackcat13" class="w-full h-auto rounded object-cover">
                     </div>
                 </div>
             </section>
 
             <!-- 12. 補鼠 → 模仿之貓 + 超暗影 or 碎裂尖甲 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 補鼠 → 模仿之貓 + 超暗影 or 碎裂尖甲
                 </h2>
                 <p class="text-slate-300 leading-relaxed">
                     後半的模仿之貓在分身攻擊同時，BOSS會使用直線分攤攻擊的超暗影，或對隨機三人扇形攻擊的碎裂尖甲。從BOSS的詠唱欄判斷。 <br class="mb-2">
-                    <strong class="text-yellow-400">▼ 超暗影為7人分攤</strong><br> 超暗影為有標記的直線分攤攻擊，除分身攻擊目標以外的7人集合分攤即可。 <br class="mb-2">
+                    <strong class="text-yellow-400">▼ 超暗影為7人分攤</strong><br> 超暗影為有標記的直線分攤攻擊，除分身攻擊目標以外的7人集合分攤即可. <br class="mb-2">
                     <strong class="text-yellow-400">▼ 碎裂尖甲需照職能集合</strong><br> 碎裂尖甲會點1名坦克、1名補師與1名DPS發出扇形攻擊，面對BOSS左側為坦克、中間DPS、右側補師按照職能固定站位。
                 </p>
             </section>
 
             <!-- 13. 傾盆大貓 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 傾盆大貓
                 </h2>
@@ -220,17 +229,17 @@
                 </p>
                 <!-- 圖片群組 (2張並排) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat14.png" alt="blackcat14" class="w-full h-auto rounded object-cover">
                     </div>
-                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                    <div class="bg-slate-900/80 p-2 rounded border border-slate-800">
                         <img src="images/m1s/blackcat15.png" alt="blackcat15" class="w-full h-auto rounded object-cover">
                     </div>
                 </div>
             </section>
 
             <!-- 14. 迅貓急襲 -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
                 <h2 class="text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-yellow-400"></span> 迅貓急襲
                 </h2>
@@ -240,7 +249,7 @@
             </section>
 
             <!-- 15. 補鼠 (時間切) -->
-            <section class="bg-slate-750 p-5 rounded-xl border border-red-500/40 bg-red-950/20">
+            <section class="p-5 rounded-xl border border-red-500/40 bg-red-950/20">
                 <h2 class="text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-red-400"></span> 補鼠 (狂暴時間切)
                 </h2>
