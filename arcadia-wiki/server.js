@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+
+// 💡 核心修改：優先使用 Render 分配的 PORT，本地測試則預設 3000
+const PORT = process.env.PORT || 3000;
 
 // 允許讀取 public 資料夾內的靜態檔案
 app.use(express.static(path.join(__dirname, 'public')));
@@ -67,6 +69,6 @@ app.post('/api/search', (req, res) => {
 app.listen(PORT, () => {
     console.log(`==================================================`);
     console.log(` 🚀 阿卡迪亞攻略網後端已更新並成功啟動！`);
-    console.log(` 🌐 網址請輸入：http://localhost:${PORT}`);
+    console.log(` 🌐 連接埠 Port: ${PORT}`);
     console.log(`==================================================`);
 });
