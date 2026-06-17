@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿卡迪亞零式 - 1樓攻略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen p-4 md:p-8">
+
+    <!-- 背景音樂 -->
+    <audio id="bgm" src="ItsShowtime.mp3" loop></audio>
+
+    <div class="max-w-5xl mx-auto">
+        <!-- 頂部導航與音樂控制 -->
+        <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+            <a href="index.html" class="text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-1 transition">
+                <span>←</span> 回首頁
+            </a>
+            <button onclick="toggleMusic()" id="musicBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg transition">
+                🎵 播放戰鬥 BGM
+            </button>
+        </div>
+
+        <!-- 主攻略卡片 -->
+        <main class="bg-slate-800/90 rounded-2xl border border-slate-700 shadow-2xl p-6 md:p-8 space-y-10">
+            <!-- 標題 -->
+            <div class="border-l-4 border-rose-500 pl-4">
+                <h1 class="text-3xl md:text-4xl font-black tracking-wide text-rose-400">【阿卡迪亞零式】輕量級一層 黑貓</h1>
+                <p class="text-slate-400 mt-1">關卡簡稱：M1S | Boss：黑貓</p>
+            </div>
+
+            <!-- 1. 四連尖甲 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 四連尖甲
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    四連尖甲 1、2次為對「距離BOSS最近的人」打扇形攻擊。第3、4則是1、2次的扇形範圍重複攻擊。
+                </p>
+                <!-- 圖片群組 (3張並排) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat1.png" alt="blackcat1" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat2.png" alt="blackcat2" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat3.png" alt="blackcat3" class="w-full h-auto rounded object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 貓踏踏 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-rose-400 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-400"></span> 貓踏踏
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    坦克2連死刑。第一次攻擊後為對方賦予斬擊耐性下降的debuff，因此ST需要在貓踏踏詠唱途中挑釁換坦處理。ST吃完傷害後MT再挑釁取回仇恨即可。
+                </p>
+            </section>
+
+            <!-- 3. 貓生九命 + 二連尖甲 + 靈魂之影 + 雙重or四重利爪 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 貓生九命 + 二連尖甲 + 靈魂之影 + 雙重or四重利爪
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    貓生九命後會對BOSS自身賦予貓生九命buff，將接下來釋放的技能儲存下來。這機制在二連尖甲後將會在場上生成兩隻分身。 二連尖甲為兩次連續的半場刀攻擊，攻擊順序為先後抬起手臂的順序。之後在場上身成的分身將會依照BOSS本體先前施放的技能行動。 兩隻分身的二連尖甲結束後BOSS本體將會讀取雙重或四重利爪。雙重為點兩名補師的四人分攤，分MT組ST組在BOSS左右處理。四重為點名坦補或DPS四人的二二分攤，按巨集的分攤分組在十字處理。
+                </p>
+                <!-- 圖片群組 (2張並排) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat4.png" alt="blackcat4" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat5.png" alt="blackcat5" class="w-full h-auto rounded object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 靈魂之影 + 貓跳四連尖甲 + 雙重or四重利爪 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 靈魂之影 + 貓跳四連尖甲 + 雙重or四重利爪
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    貓跳四連尖甲時BOSS會不改變面向左右平移到目標點釋放與開場相同的四連尖甲。 四連尖甲後分身會施放前一次機制時BOSS讀條的雙重or四重利爪。
+                </p>
+                <!-- 圖片群組 (2張並排) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat6.png" alt="blackcat6" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat7.png" alt="blackcat7" class="w-full h-auto rounded object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 血腥抓撓 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-rose-400 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-rose-400"></span> 血腥抓撓
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    傷害非常高的全體物理攻擊。注意減傷。
+                </p>
+            </section>
+
+            <!-- 6. 捕鼠 + 模仿之貓 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 捕鼠 + 模仿之貓
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    普通難度也有的破壞場地機制。在中央四個方格中注視北側兩格或南側兩格，確認出現兩次預兆的方格後，注意別踩在會被破壞的地板上。 <br class="mb-2">
+                    捕鼠後被破壞的地板會修復，變成8格的場地，其中4格為全新地板、4格為被破壞過的地板。 接著分身會重複4次對坦補或DPS中玩家所在格子的十字範圍攻擊。目標玩家必須在全新的地板承受分身攻擊，攻擊後地板會被破壞，因此不能在被破壞過的地板進行。遠程職業使用外側兩格，近戰職業使用內側兩格。 另外，複製貓的攻擊有在原地暈眩數秒與擊飛上天兩種可能。
+                </p>
+                <!-- 圖片群組 (2張並排) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat8.png" alt="blackcat8" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat9.png" alt="blackcat9" class="w-full h-auto rounded object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. 衝擊波 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 衝擊波
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    BOSS本體使出擊退，防擊退無效。 之後場地會先後修復，因此必須擊退到先修復的地方，另外安全區必定在對角。
+                </p>
+                <!-- 圖片群組 (2張並排) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat10.png" alt="blackcat10" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat11.png" alt="blackcat11" class="w-full h-auto rounded object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. 貓跳二連尖甲→靈魂之影 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 貓跳二連尖甲→靈魂之影
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    與貓跳四連尖甲相同，不改變面向左右平移到目標點使用二連尖甲。先移動到安全區，待第一次攻擊結束後移動到另一邊躲避第二次攻擊。 之後會使用靈魂之影連線南北隨機出現的分身，保存貓跳的移動方向與二連尖甲的攻擊順序。之後分身會往相同方向平移並使用攻擊，請記好機制。
+                </p>
+            </section>
+
+            <!-- 9. 貓跳四連尖甲→靈魂之影 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 貓跳四連尖甲→靈魂之影
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    使用貓跳二連尖甲之後，BOSS會再次使用貓跳四連尖甲。處理方法與前半的四連尖甲相同，此處應以BOSS面向為基準站位，而非分身。因此機制前必須確認BOSS自身面向與自己的散開站位。 在這之後，靈魂之影會連線另一個分身保存移動與攻擊順序。請好好記住BOSS是往左還是往右移動，這很重要。
+                </p>
+            </section>
+
+            <!-- 10. 暴風裂 + 二連尖甲(分身) -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 暴風裂 + 二連尖甲(分身)
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    連線保存二連尖甲的分身，BOSS使用暴風裂、分身使用二連尖甲。分身會往與先前貓跳二連尖甲相同的方向移動，使用相同的攻擊順序。照記憶的的順序處理。 例如，先前的貓跳本體向右移動、攻擊為左手→右手的話，分身則會往右平移並照左手→右手的順序攻擊。請注意這時分身的移動方向則是以分身的面向為基準。 暴風裂為點名補師兩人的直線分攤攻擊，以BOSS面向為準正面MT組、背面ST組擊和分攤。此時暴風裂會與第一次的二連尖甲同時發動，因此必須在BOSS的正面背面稍微往安全半場偏移。
+                </p>
+            </section>
+
+            <!-- 11. 剪指甲 + 四連尖甲(分身) -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 剪指甲 + 四連尖甲(分身)
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    連線保存四連尖甲的分身，BOSS使用剪指甲、分身使用四連尖甲。剪指甲，頭上會出現標記且隨後會發生小型的圓形範圍攻擊，坦補四人與DPS四人輪流點名。 此時分身會往與先前貓跳四連尖甲相同的方向移動並攻擊。貓跳時往左邊移動，分身也會往左邊移動，因此MT應將BOSS引導至分身的目的地。
+                </p>
+                <!-- 圖片群組 (2張並排) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat12.png" alt="blackcat12" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat13.png" alt="blackcat13" class="w-full h-auto rounded object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. 補鼠 → 模仿之貓 + 超暗影 or 碎裂尖甲 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 補鼠 → 模仿之貓 + 超暗影 or 碎裂尖甲
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    後半的模仿之貓在分身攻擊同時，BOSS會使用直線分攤攻擊的超暗影，或對隨機三人扇形攻擊的碎裂尖甲。從BOSS的詠唱欄判斷。 <br class="mb-2">
+                    <strong class="text-yellow-400">▼ 超暗影為7人分攤</strong><br> 超暗影為有標記的直線分攤攻擊，除分身攻擊目標以外的7人集合分攤即可。 <br class="mb-2">
+                    <strong class="text-yellow-400">▼ 碎裂尖甲需照職能集合</strong><br> 碎裂尖甲會點1名坦克、1名補師與1名DPS發出扇形攻擊，面對BOSS左側為坦克、中間DPS、右側補師按照職能固定站位。
+                </p>
+            </section>
+
+            <!-- 13. 傾盆大貓 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 傾盆大貓
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    傾盆大貓會連續4次對連線對象使出扇形攻擊，並點名距離BOSS最近與最遠的人圓形分攤。D1D2各牽一條線，在東跟西站好處理扇形。MTST兩人在BOSS下方，D3D4H2H1則在BOSS南方外側集合分攤。 在第一次扇形攻擊後將線交給雙坦，D1D2回到BOSS南方外側， 雙坦在第二次扇形攻擊之後開無敵，用無敵處理第三第四次。
+                </p>
+                <!-- 圖片群組 (2張並排) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat14.png" alt="blackcat14" class="w-full h-auto rounded object-cover">
+                    </div>
+                    <div class="bg-slate-800 p-2 rounded border border-slate-700">
+                        <img src="images/m1s/blackcat15.png" alt="blackcat15" class="w-full h-auto rounded object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 14. 迅貓急襲 -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-slate-700/60 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span> 迅貓急襲
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    各憑本事，不要吃到兩次攻擊的話基本上不會死。
+                </p>
+            </section>
+
+            <!-- 15. 補鼠 (時間切) -->
+            <section class="bg-slate-750 p-5 rounded-xl border border-red-500/40 bg-red-950/20">
+                <h2 class="text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-red-400"></span> 補鼠 (狂暴時間切)
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    時間切， 請在所有地板被破壞前擊敗BOSS。
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript 邏輯 -->
+    <script>
+        const bgm = document.getElementById('bgm');
+        const musicBtn = document.getElementById('musicBtn');
+        function toggleMusic() {
+            if (bgm.paused) {
+                bgm.play();
+                musicBtn.innerText = "⏸ 暫停戰鬥 BGM";
+                musicBtn.classList.replace('bg-purple-600', 'bg-red-600');
+            } else {
+                bgm.pause();
+                musicBtn.innerText = "🎵 播放戰鬥 BGM";
+                musicBtn.classList.replace('bg-red-600', 'bg-purple-600');
+            }
+        }
+    </script>
+</body>
+</html>

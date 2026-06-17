@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿卡迪亞零式攻略情報站</title>
+    <!-- 引入 Tailwind CSS 讓畫面變好看 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex flex-col items-center justify-center p-6">
+
+    <!-- 背景音樂 -->
+    <audio id="bgm" src="music/bgm-main.mp3" loop></audio>
+
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-cyan-400 mb-2">ARCADIA 阿卡迪亞零式攻略站</h1>
+        <p class="text-slate-400">最專業的副本機制解析與走位教學</p>
+        <button onclick="toggleMusic()" id="musicBtn" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-1.5 rounded-full text-sm font-bold transition">
+            🎵 播放背景音樂
+        </button>
+    </header>
+
+    <!-- 搜尋區塊 -->
+    <div class="w-full max-w-md mb-12">
+        <div class="flex gap-2">
+            <input type="text" id="searchInput" placeholder="輸入 Boss 名稱或代號 (如: m1s, 蜜蜂)..." 
+                   class="w-full px-4 py-2 rounded bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-cyan-400">
+            <button onclick="searchBoss()" class="bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-bold px-6 py-2 rounded transition">
+                搜尋
+            </button>
+        </div>
+        <p id="searchError" class="text-red-400 text-sm mt-2 hidden"></p>
+    </div>
+
+    <!-- Boss 選擇選單 -->
+    <h2 class="text-2xl font-bold mb-6 text-slate-300">選擇關卡 (1F - 5F)</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 w-full max-w-5xl">
+        <a href="blackcat.html" class="block p-6 bg-slate-800 rounded-lg border border-slate-700 hover:border-cyan-400 text-center transition">
+            <div class="text-cyan-400 font-bold text-xl mb-2">1 樓 (M1S)</div>
+            <p class="text-sm text-slate-400">黑貓</p>
+        </a>
+        <a href="boss2.html" class="block p-6 bg-slate-800 rounded-lg border border-slate-700 hover:border-cyan-400 text-center transition">
+            <div class="text-cyan-400 font-bold text-xl mb-2">2 樓 (M2S)</div>
+            <p class="text-sm text-slate-400">蜂蜂小甜心</p>
+        </a>
+        <a href="boss3.html" class="block p-6 bg-slate-800 rounded-lg border border-slate-700 hover:border-cyan-400 text-center transition">
+            <div class="text-cyan-400 font-bold text-xl mb-2">3 樓 (M3S)</div>
+            <p class="text-sm text-slate-400">野蠻爆彈</p>
+        </a>
+        <a href="boss4.html" class="block p-6 bg-slate-800 rounded-lg border border-slate-700 hover:border-cyan-400 text-center transition">
+            <div class="text-cyan-400 font-bold text-xl mb-2">4 樓 (M4S)前半</div>
+            <p class="text-sm text-slate-400">狡雷</p>
+        </a>
+        <a href="boss5.html" class="block p-6 bg-slate-800 rounded-lg border border-slate-700 hover:border-cyan-400 text-center transition">
+            <div class="text-cyan-400 font-bold text-xl mb-2">4樓 (M4S)後半</div>
+            <p class="text-sm text-slate-400">狡雷</p>
+        </a>
+    </div>
+
+    <!-- 前端 JavaScript 邏輯 -->
+    <script>
+        // 音樂控制
+        const bgm = document.getElementById('bgm');
+        const musicBtn = document.getElementById('musicBtn');
+        function toggleMusic() {
+            if (bgm.paused) {
+                bgm.play();
+                musicBtn.innerText = "⏸ 暫停背景音樂";
+                musicBtn.classList.replace('bg-purple-600', 'bg-red-600');
+            } else {
+                bgm.pause();
+                musicBtn.innerText = "🎵 播放背景音樂";
+                musicBtn.classList.replace('bg-red-600', 'bg-purple-600');
+            }
+        }
+
+        // 呼叫後端 API 進行搜尋
+        async function searchBoss() {
+            const query = document.getElementById('searchInput').value;
+            const errorTxt = document.getElementById('searchError');
+            
+            errorTxt.classList.add('hidden');
+
+            try {
+                const response = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query })
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    // 搜尋成功，直接跳轉到對應網頁
+                    window.location.href = data.url;
+                } else {
+                    errorTxt.innerText = data.message;
+                    errorTxt.classList.remove('hidden');
+                }
+            } catch (err) {
+                console.error("搜尋出錯:", err);
+            }
+        }
+    </script>
+</body>
+</html>
