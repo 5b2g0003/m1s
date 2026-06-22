@@ -21,7 +21,7 @@ const bossDatabase = [
         id: 2, 
         name: "蜂蜂小甜心", 
         keywords: ["毒液滴落", "殺人斬", "殺人針", "m2s", "蜂蜂演唱會","環環心連心","圓圓心連心","溫柔地愛我 ","蜂蜂落幕曲","警告賀爾蒙","黑心"], 
-        url: "HoneyB.Lovely.html"
+        url: "honeyblovely.html"
     },
     { 
         id: 3, 
