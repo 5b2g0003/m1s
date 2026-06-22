@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿卡迪亞零式 - 4層後半攻略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .boss-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.90)), url('images/bg-boss4-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="boss-bg text-white min-h-screen p-4 md:p-8">
+
+    <!-- 背景音樂（請確保檔案放在 public/music/ARiskyBet.mp3） -->
+    <audio id="bgm" src="music/ARiskyBet.mp3" loop></audio>
+
+    <div class="max-w-5xl mx-auto">
+        <!-- 頂部導航與音樂控制 -->
+        <div class="flex justify-between items-center mb-6 border-b border-purple-700/50 pb-4">
+            <a href="index.html" class="text-purple-400 hover:text-purple-300 font-bold flex items-center gap-1 transition">
+                <span>←</span> 回首頁
+            </a>
+            <button onclick="toggleMusic()" id="musicBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg transition-all duration-300">
+                🎵 播放後半 BGM
+            </button>
+        </div>
+
+        <!-- 主攻略卡片 -->
+        <main class="bg-slate-950/80 backdrop-blur-sm rounded-2xl border border-purple-950 shadow-2xl p-6 md:p-8 space-y-10">
+            <!-- 標題 -->
+            <div class="border-l-4 border-purple-500 pl-4">
+                <h1 class="text-3xl md:text-4xl font-black tracking-wide text-purple-400">【阿卡迪亞零式】輕量級四層後半 狡雷</h1>
+                <p class="text-slate-400 mt-1">關卡簡稱：M4S後半 | Boss：狡雷 BGM A Risky Bet 〜至天の座アルカディア：ライトヘビー級〜</p>
+            </div>
+
+            <!-- 1. 交叉尾亂擊 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 交叉尾亂擊
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    連續9次的魔法全體AOE。傷害非常高所以得使用坦克LB。但沒辦法只靠坦LB承受九次攻擊，同時也需要其他減傷。<br><br>
+                    坦克LB的時機<br>
+                    坦克LB的時機約在「交叉尾亂擊」讀條到**「擊」**字時按下，有機會可以最後一下也蓋到坦LB。
+                </p>
+            </section>
+
+            <!-- 2. 狡詭雷焰 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 狡詭雷焰
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    MT組ST組分別在左右的第一個安區待機，這之後前往地火的安區，地火安區為對面組那列向外移動的地火。例圖的解為MT組往南移動一列、ST組往北移動一列躲避地火。 狡詭雷焰會點名2名補師連續4次的分攤，之後場上會出現許多地火的預兆。躲避地火之後會開始分攤攻擊，各組4人移動到同樣的地點躲避地火和分攤吧。 ▼ 移動到最前列時不要中途停下 安區在最前列的話，突然停下可能會吃到地火。為了避免沒分攤到而停下腳步是很危險的事，請確保4人都持續地移動。 
+                </p>
+            </section>
+
+            <!-- 3. 狡詭特技 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 狡詭特技
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    BOSS身上出現兩條線，對連線的對象使用死刑的同時在其餘6人中隨機點四人鋼鐵。另外給予連線對象一個可以傳遞的debuff。坦克開減傷接第一條線，之後沒被點鋼鐵的人與坦克重疊，取走debuff處理機制。 對坦以外的職業傷害也很高，注意別死了 芥末炸彈看似是對坦死刑，點名其他玩家的鋼鐵傷害也非常高。若在HP沒有回復的狀態下承傷的話可能會死掉，因此補師請盡快回復HP應對機制。 
+                </p>
+            </section>
+
+            <!-- 4. 屬性轉換 + 尖尾刺 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 屬性轉換 + 尖尾刺
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    BOSS往左右的機械手臂附加火或水屬性，之後會使用對應屬性的尖尾刺。附加火屬性的場合，會在先附加屬性的手臂發動巨大的鋼鐵，接著另一邊的手臂也會發動同樣攻擊。附加水屬性的場合會在先被附加屬性的手臂發動擊退，接著另一邊的手臂也同樣會擊退 
+                </p>
+            </section>
+
+            <!-- 5. 青雷 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 青雷
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    全體魔法AOE攻擊。之後會在場地周圍設置踩入即死的圓形範圍。AOE非常痛，因此請使用減傷與護盾。
+                </p>
+            </section>
+
+            <!-- 6. 黑色安息日的日落 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 黑色安息日的日落
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    BOSS會在青雷後形成的圓形場地十字方向召喚4隻分身，2隻會先使出側方電火花。第一次側方電火花的同時會有設置的鋼鐵，第二次BOSS會同時使用狡詭特技，在迴避側方電火花的同時躲避特技吧。 
+                </p>
+            </section>
+
+            <!-- 7. 黑色安息日的午夜 + 集散 or 散集式衝擊砲 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 黑色安息日的午夜 + 集散 or 散集式衝擊砲
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    BOSS會以十字或X字依序召喚8隻分身，分身會使用直線或月環攻擊。分身攻擊同時BOSS會使用散集or集散式衝擊砲，散集的場合為在分身攻擊的安區先散開後分攤，集散的場合為先分攤後散開。 記住以下流程：確認先出現的分身→是散集還是集散→移動到適當的位子處理。 
+                </p>
+            </section>
+
+            <!-- 8. 火焰斬 + 劍雨 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 火焰斬 + 劍雨
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    BOSS往場地中央使用直線攻擊破壞場地只剩左右兩側。因此MT組必須先向左、ST組向左側移動至即將分割的場地。 之後BOSS詠唱劍雨在左右各生成4座塔，按照巨集的位子踩塔。 
+                </p>
+            </section>
+
+            <!-- 9. 雷光鏈 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 雷光鏈
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    在劍雨後的塔會左右之中有三座被連線，會依據連線的塔與順序依序發動鋼鐵。四座塔中有一座不會被連線，記好自己所在那側的安區順序躲避鋼鐵吧。 同一座塔不會有兩次安區。另外，安區比較狹窄，注意別站到隔壁塔的鋼鐵範圍內了。 
+                </p>
+            </section>
+
+            <!-- 10. 青雷 + 黑色安息日的日出 -->
+            <section class="p-5 rounded-xl border border-slate-800 bg-slate-900/40">
+                <h2 class="text-xl font-bold text-cyan-300 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> 青雷 + 黑色安息日的日出
+                </h2>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    場地上出現6隻分身，其中4隻會釋放可誘導的光束，還有兩座兩人用的塔。光束範圍非常寬，因此要注意誘導的站立位置。另外塔的位子會根據其他2隻分身的面相有變化，兩次都是隨機的因此請務必要確認清楚。 
+                </p>
+                <div class="overflow-x-auto max-w-xl">
+                    <table class="min-w-full bg-slate-900 border border-slate-800 text-sm text-slate-300">
+                        <thead>
+                            <tr class="border-b border-slate-800 bg-slate-950 text-left">
+                                <th class="p-3 font-bold text-purple-400">誘導光束</th>
+                                <th class="p-3 font-bold text-purple-400">踩塔</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-800">
+                                <td class="p-3">坦補<br>從11點方向逆時針</td>
+                                <td class="p-3">西/南</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">DPS<br>從12點方向順時針</td>
+                                <td class="p-3">北/東</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 11. 劍舞 -->
+            <section class="p-5 rounded-xl border border-red-500/40 bg-red-950/20">
+                <h2 class="text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-red-400"></span> 劍舞
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    攻擊場地四次，全體AOE的同時在場上留下預告。從預告發動超大的直線攻擊，直線攻擊的同時會發動2人分攤。安區共有4個，因此以2:2:2:2的方式往安區移動並分攤。 3次劍舞之後狡雷會詠唱時間切。 
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript 邏輯 -->
+    <script>
+        const bgm = document.getElementById('bgm');
+        const musicBtn = document.getElementById('musicBtn');
+
+        bgm.loop = true;
+
+        function toggleMusic() {
+            if (bgm.paused) {
+                if (bgm.ended) {
+                    bgm.currentTime = 0;
+                }
+                bgm.play().then(() => {
+                    musicBtn.innerText = "⏸ 暫停後戰鬥BGM";
+                    musicBtn.classList.replace('bg-purple-600', 'bg-red-600');
+                }).catch(err => {
+                    console.error("播放被阻擋：", err);
+                });
+            } else {
+                bgm.pause();
+                musicBtn.innerText = "🎵 播放後戰鬥BGM";
+                musicBtn.classList.replace('bg-red-600', 'bg-purple-600');
+            }
+        }
+
+        bgm.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+    </script>
+</body>
+</html>
