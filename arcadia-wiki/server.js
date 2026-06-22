@@ -33,13 +33,13 @@ const bossDatabase = [
         id: 4, 
         name: "狡雷", 
         keywords: ["門神","驚電魔女狩獵", "圓環式魔女狩獵", "環圓式魔女狩獵", "m4s", "雷轉質展開","奔雷砲","雷轉質移植","靈魂震盪"], 
-        url: "WickedThunder.html" 
+        url: "NeotericWitch.html" 
     },
     { 
         id: 5, 
         name: "狡雷後半", 
         keywords: ["交叉尾亂擊", "狡詭雷焰", "本體", "狡詭特技", "芥末炸彈","尖尾刺","黑色安息日的日落","黑色安息日的午夜","火焰斬","劍雨","雷光鏈","黑色安息日的日出","劍舞"], 
-        url: "WickedThunder2.html" 
+        url: "NeotericWitch2.html" 
     }
 ];
 
